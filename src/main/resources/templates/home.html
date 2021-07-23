@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<body>
+<div>
+    <a th:href="@{searchResult}">home page</a>
+</div>
+
+    <div>
+        <form th:action="@{/search}" method="get" th:id="form">
+            <input id="search" Type In Name="searchQuery" th:name="searchQuery">
+            <button type="submit" class="btn btn-primary btn-xs">Search</button>
+        </form>
+    </div>
+
+    <div>
+        <div th:each="song:${songs}">
+            <h3 style="font-family: 'Segoe UI'" th:text="${song.getName()}"></h3>
+        </div>
+    </div>
+
+    <div>
+        <div th:each="artist:${artists}">
+            <h3 style="font-family: 'Segoe UI'" th:text="${artist.getName()}"></h3>
+        </div>
+    </div>
+
+    <div>
+        <div th:each="genre:${genres}">
+            <h3 style="font-family: 'Segoe UI'" th:text="${genre.getName()}"></h3>
+        </div>
+    </div>
+
+</body>

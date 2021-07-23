@@ -11,6 +11,9 @@ public class Customer {
     private String postalCode;
     private String phoneNumber;
     private String email;
+    private Float total;
+    private String countCountry;
+
     private ArrayList<Customer> arrayListCustomer = new ArrayList<Customer>();
 
     public Customer(int id, String firstName, String lastName, String country, String postalCode, String phoneNumber, String email) {
@@ -22,6 +25,12 @@ public class Customer {
         this.phoneNumber = phoneNumber;
         this.email = email;
        // arrayListCustomer.add(this);
+    }
+    public Customer (int id, String firstName, String lastName, Float total){
+        this.id=id;
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.total=total;
     }
 
     public int getId() {
@@ -80,5 +89,19 @@ public class Customer {
         this.email=email;
     }
 
+    public Float getTotal() {
+        return total;
+    }
 
+    public void setTotal(Float total) {
+        this.total = total;
+    }
+
+    public String getCountCountry() {
+        return countCountry;
+    }
+
+    public void setCountCountry(String countCountry) {
+        this.countCountry = countCountry;
+    }
 }
